@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //
-//= require handlebars
 //= require_self
 

@@ -1,36 +1,41 @@
 <br/>
-<h2>Weekly Trending Topics on Yammer</h2>
-<br/> <br/>
-<table class='table table-bordered table-striped'>
-  <tr>
-    <th>Week of</th>
-    <th>Keyword</th>
-    <th>Top Contributors</th>
-  </tr>
-<% @topics.each do |topic| %>
-  <tr>
-    <td> <%= topic.week_start_date %> </td>
-    <td> <%= topic.name %> </td>
-    <td>
-      <table class='table table-bordered table-striped'>
-        <% topic.topic_users.each do |tu| %>
-        <tr>
-          <td>
-            <% if tu.user %>
-              <%= link_to tu.user.name.force_encoding('ISO-8859-1').encode('UTF-8'),
-                "https://www.yammer.com/yammerdevelopersnetwork/users/"+tu.user.id.to_s,
-                :target => '_blank' %>
-            <% else %>
-              &nbsp;
+<div class="row">
+  <div class="span1"></div>
+  <div class="span12">
+    <h2>Weekly Trending Topics on Yammer</h2>
+    <br/> <br/>
+    <table class='table table-bordered table-striped'>
+      <tr>
+        <th class="span2">Week of</th>
+        <th class="span1">Keyword</th>
+        <th class="span9">Top Contributors</th>
+      </tr>
+    <% @topics.each do |topic| %>
+      <tr>
+        <td> <%= topic.week_start_date %> </td>
+        <td> <%= topic.name %> </td>
+        <td>
+          <table class='table table-bordered table-striped'>
+            <% topic.topic_users.each do |tu| %>
+            <tr>
+              <td>
+                <% if tu.user %>
+                  <%= link_to tu.user.name.force_encoding('ISO-8859-1').encode('UTF-8'),
+                    "https://www.yammer.com/yammerdevelopersnetwork/users/"+tu.user.id.to_s,
+                    :target => '_blank' %>
+                <% else %>
+                  &nbsp;
+                <% end %>
+              </td>
+              <td>
+                <%= tu.message.body[0..200] %>
+              </td>
+            </tr>
             <% end %>
-          </td>
-          <td>
-            <%= tu.message.body[0..120] %>
-          </td>
-        </tr>
-        <% end %>
-      </table>
-    </td>
-  </tr>
-<% end %>
-</table>
+          </table>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>

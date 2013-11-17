@@ -16,9 +16,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'coffee-rails-source-maps', :group => :development
 
-gem 'ember-rails'
-gem 'ember-source', '1.1.2'
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

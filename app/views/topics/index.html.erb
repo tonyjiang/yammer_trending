@@ -10,9 +10,17 @@
         <th class="span1">Keyword</th>
         <th class="span9">Top Contributors</th>
       </tr>
+    <% date = Date.today + 8.days %>
     <% @topics.each do |topic| %>
       <tr>
-        <td> <%= topic.week_start_date %> </td>
+        <td>
+          <% if date == topic.week_start_date %>
+            &nbsp;
+          <% else %>
+            <%= topic.week_start_date %>
+            <% date = topic.week_start_date %>
+          <% end %>
+        </td>
         <td> <%= topic.name %> </td>
         <td>
           <table class='table table-bordered table-striped'>

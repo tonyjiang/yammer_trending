@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all
+    @topics = Topic.order("week_start_date desc")
 
     respond_to do |format|
       format.html # index.html.erb

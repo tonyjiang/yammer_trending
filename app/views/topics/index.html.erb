@@ -1,6 +1,7 @@
-<h1>Trending Topics on Yammer</h1>
-
-<table>
+<br/>
+<h2>Trending Topics on Yammer</h2>
+<br/> <br/>
+<table class='table-bordered'>
   <tr>
     <th>Week of</th>
     <th>Topic</th>
@@ -11,7 +12,7 @@
     <td> <%= topic.week_start_date %> </td>
     <td> <%= topic.name %> </td>
     <td>
-      <table>
+      <table class='table-bordered'>
       <tr>
         <% topic.topic_users.each do |tu| %>
         <td>

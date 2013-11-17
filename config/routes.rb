@@ -1,5 +1,7 @@
 YammerTrending::Application.routes.draw do
-  get "topics/index"
+  resources :topics
+  root to: "topics#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,2 +1,29 @@
-<h1>Topics#index</h1>
-<p>Find me in app/views/topics/index.html.erb</p>
+<h1>Trending Topics on Yammer</h1>
+
+<table>
+  <tr>
+    <th>Week of</th>
+    <th>Topic</th>
+    <th>Top Contributors</th>
+  </tr>
+<% @topics.each do |topic| %>
+  <tr>
+    <td> <%= topic.week_start_date %> </td>
+    <td> <%= topic.name %> </td>
+    <td>
+      <table>
+      <tr>
+        <% topic.topic_users.each do |tu| %>
+        <td>
+          <%= tu.user.name %>
+        </td>
+        <td>
+          <%= tu.message.body %>
+        </td>
+        <% end %>
+      </tr>
+      </table>
+    </td>
+  </tr>
+<% end %>
+</table>

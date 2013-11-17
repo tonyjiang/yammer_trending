@@ -1,5 +1,13 @@
 YammerTrending::Application.routes.draw do
-  resources :topics
+
+  namespace :api do
+    namespace :v1 do
+      resources :topics do
+        resources :users
+      end
+    end
+  end
+
   root to: "topics#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,7 +1,7 @@
 <br/>
 <h2>Weekly Trending Topics on Yammer</h2>
 <br/> <br/>
-<table class='table-bordered'>
+<table class='table table-bordered table-striped'>
   <tr>
     <th>Week of</th>
     <th>Keyword</th>
@@ -17,7 +17,9 @@
         <tr>
           <td>
             <% if tu.user %>
-              <%= tu.user.name.force_encoding('ISO-8859-1').encode('UTF-8') %>
+              <%= link_to tu.user.name.force_encoding('ISO-8859-1').encode('UTF-8'),
+                "https://www.yammer.com/yammerdevelopersnetwork/users/"+tu.user.id.to_s,
+                :target => '_blank' %>
             <% else %>
               &nbsp;
             <% end %>
